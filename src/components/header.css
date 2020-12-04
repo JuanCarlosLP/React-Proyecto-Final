@@ -1,0 +1,16 @@
+header {
+  width: 80%;
+  height: 8vh;
+}
+
+.navbar {
+  width: 80%;
+  height: 20%;
+}
+
+.navbar ul {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}

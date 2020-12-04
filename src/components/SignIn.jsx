@@ -1,8 +1,45 @@
 import React from "react";
+import firebase from '../firebase/config';
+import {useHistory} from 'react-router-dom'; 
+//* Material imports
 import { Grid } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-export default function SignIn () {
+
+
+export default function SignIn (props) {
+  const history = useHistory();
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
+  const facebookProvider = new firebase.auth.FacebookAuthProvider();
+
+  const showGooglePopup = async () => {
+    try {
+      let result = await firebase.auth().signInWithPopup(googleProvider);
+      console.log("Autenticado satisfactoriamente", result);
+      //Para actualizar el estado y redireccionar al usuario a otra pagina
+      await props.setUserFn(result.user);
+      history.push("/pokedex");
+    } catch (error) {
+      console.log("Error en la autenticacion", error);
+      //En caso de que las credenciales de acceso sean incorrectas
+    }
+  };
+
+  const showFacebookPopup = async () => {
+    try {
+      let result = await firebase.auth().signInWithPopup(facebookProvider);
+      console.log("Autenticado satisfactoriamente", result);
+      //Para actualizar el estado y redireccionar al usuario a otra pagina
+      props.setUserFn(result.user);
+      history.push("/pokedex");
+    } catch (error) {
+      console.log("Error en la autenticacion", error);
+      //En caso de que las credenciales de acceso sean incorrectas
+    }
+  };
+
+
+
    return (
 <div>
     <Grid container style={{minHeight: '100vh'}}>
@@ -17,7 +54,7 @@ export default function SignIn () {
             item 
             xs={12} 
             sm={6} 
-            alignContent="center" 
+            aligncontent="center" 
             direction="column"
             justify="space-between"
             style={{ padding:10 }}>
@@ -63,7 +100,7 @@ export default function SignIn () {
                     fullWidth
                     variant="contained"
                     color="link"
-                    alignContent="center" 
+                    aligncontent="center" 
                     direction="column"
                     justify="space-between"
                     style={{ padding:10, top:10}}
@@ -73,11 +110,12 @@ export default function SignIn () {
                 <div style={{ height: 20 }} />
                 {/*Button Sign In Google*/}
                 <Button
+                    onClick={showGooglePopup}
                     type="submit"
                     fullWidth
                     variant="contained"
                     color="secondary"
-                    alignContent="center" 
+                    aligncontent="center" 
                     direction="column"
                     justify="space-between"
                     style={{ padding:10, top:10}}
@@ -87,11 +125,12 @@ export default function SignIn () {
                 <div style={{ height: 20 }} />
                 {/*Button Sign In Facebook*/}
                 <Button
+                    onClick={showFacebookPopup}
                     type="submit"
                     fullWidth
                     variant="contained"
                     color="primary"
-                    alignContent="center" 
+                    aligncontent="center" 
                     direction="column"
                     justify="space-between"
                     style={{ padding:10, top:10}}

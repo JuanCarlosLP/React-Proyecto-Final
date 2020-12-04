@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "./header.css";
 
 export default function Header() {
   return (
     <header>
-      <nav>
+      <nav className="navbar">
         <ul>
           <li>
             <Link to="/">Inicio</Link>
           </li>
           <li>
-            <Link to="/nosotros">Nosotros</Link>
+            <Link to="/registro">Registro</Link>
           </li>
           <li>
-            <Link to="/contacto">Contacto</Link>
+            <Link to="/pokedex">Pokedex</Link>
           </li>
         </ul>
       </nav>
