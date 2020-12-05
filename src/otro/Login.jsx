@@ -1,13 +1,13 @@
 import Reat from 'react';
 
-export default function Login() {
+/* export default function Login() {
   return (
     <div>
       <button onClick= {showGooglePopup} >Iniciar sesión con Google</button>
       <button onClick= {showFacebookPopup} >Iniciar sesión con Facebook</button>
     </div>
   );
-}
+} */
 
 // Se importa en App en la ruta raíz
 
