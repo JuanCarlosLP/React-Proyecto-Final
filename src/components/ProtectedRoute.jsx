@@ -4,18 +4,16 @@ import { Route } from "react-router-dom";
 import SignIn from './SignIn';
 
 export default function ProtectedRoute(props) {
-  const [user, setUser] = useState(props.user);
   return (
     <Route path={props.path}>
-      {/* {user ? 
+      {props.user ? 
       (props.children) :
       (
-        // <SignIn setUserFn={props.setUserFn} />
-        <>
+        <SignIn setUserFn={props.setUserFn} />
+        /* <>
           <h2>No tienes acceso a esta ruta</h2>
-        </>
-      )} */}
-      {(props.children)}
+        </> */
+      )}
     </Route>
   );
 }

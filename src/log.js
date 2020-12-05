@@ -3,9 +3,11 @@
 
 
 //{ 1. Crear un proyecto en firebase y crea una aplicación web para utilizar el servicio de autenticación, después deberás habilitar los proveedores de inicio de sesión con email y contraseña, Google y Facebook.
+//! HECHO
 //{ 2. Instala la dependencia de firebase en tu proyecto y crea un archivo de configuración en donde coloques las credenciales que te proporcionó firebase al momento de crear tu aplicación web.
 //! HECHO
 //{ 3. Exporta el objeto firebase de ese archivo de configuración e impórtalo en los componentes de inicio de sesión y registro.
+//! HECHO
 //{ 4. Crea un formulario de inicio de sesión y 2 botones adicionales para poder iniciar sesión con Google y Facebook.
 //! HECHO
 //{ 5. Crea dos funciones para mostrar la ventana emergente de inicio de sesión tanto para Google como Facebook.
@@ -24,6 +26,7 @@
 //[ a. https://reactrouter.com/web/api/Hooks/usehistory – redireccionar con un el hook useHistory
 //[ b. https://reactrouter.com/web/example/auth-workflow – redireccionar con el componente Redirect
 //{ 12. Protege la ruta para que solo usuarios autenticados puedan acceder a la ruta/pokedex, en caso de que no tenga una sesión iniciada deberás mostrar un mensaje de que necesita iniciar sesión o simplemente puede redireccionar al usuario hacía la ruta de inicio de sesión.
+//! HECHO
 //{ 13. Coloca la aplicación que hiciste en la actividad no.4 bajo la ruta de pokedex.
 //! HECHO
 //{ 14. Coloca un menú de navegación donde tengas las paginas de:

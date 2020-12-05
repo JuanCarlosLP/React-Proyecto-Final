@@ -67,7 +67,7 @@ export default function SignIn (props) {
                 }}>
                 {/*Pokemon Logo*/}
                 <Grid container justify="center" >
-                    <img src="https://www.freepnglogos.com/uploads/pok-mon-go-logo-png-30.png" width='200'/>
+                    <img src="https://www.freepnglogos.com/uploads/pok-mon-go-logo-png-30.png" alt="Pokemon Logo" width='200'/>
                 </Grid>
                 {/*Username*/}
                 <TextField
