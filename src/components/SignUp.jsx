@@ -1,12 +1,24 @@
 import React from "react";
+import {auth} from '../firebase/config';
 import { Grid } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 
+  const register = (event) => {
+    event.preventDefault();
+    auth.createUserWithEmailAndPassword('oislasreyess@gmail.com', 'oscar1234').then(
+        response => {
+            console.log(response);
+        }
+    ).catch( error => console.log(error));
+  }
+
+
 export default function SignUp () {
    return (
 <div>
+  <form onSumbmit={register} >
     <Grid container style={{minHeight: '100vh'}}>
         {/*PRIMER CONTENEDOR con Formulario*/}
         <Grid 
@@ -27,7 +39,7 @@ export default function SignUp () {
                 }}>
                 {/*Pokemon Logo*/}
                 <Grid container justify="center" >
-                    <img src="https://www.freepnglogos.com/uploads/pok-mon-go-logo-png-30.png" width='200'/>
+                    <img src="https://www.freepnglogos.com/uploads/pok-mon-go-logo-png-30.png" alt="Pokemon Logo" width='200'/>
                 </Grid>
                 {/*First Name*/}
                 <div style={{ height: 20 }} />
@@ -106,6 +118,7 @@ export default function SignUp () {
             style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="poke-logo"/>
         </Grid>
     </Grid>
+  </form>
 </div>
   )
 };

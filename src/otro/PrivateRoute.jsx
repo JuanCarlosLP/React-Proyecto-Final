@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 
-export default function PrivateRoute(props) {
+/* export default function PrivateRoute(props) {
   const [user, setUser] = useState({name: "Luis", email: "aroa@gmail.com", isLogged: false})
 
   return (
@@ -10,7 +10,7 @@ export default function PrivateRoute(props) {
     </Route>
   )
  //Ver imagenes de pantalla para ver condicional 
-}
+} */
 
 //Su usa este componente en App.js en donde se pasa el prop de la ruta
 // Se incluye al final de todos los Route antes del 404
