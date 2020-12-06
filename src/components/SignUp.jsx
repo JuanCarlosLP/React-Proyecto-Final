@@ -36,9 +36,8 @@ export default function SignUp () {
             item 
             xs={12} 
             sm={6} 
-            aligncontent="center" 
-            direction="column"
-            justify="space-between"
+            alignItems="center"
+            justify="center"
             style={{ padding:10 }}>
             <div />
             <div style={{
