@@ -52,7 +52,8 @@
 //* Reto (Opcional):
 //{ 1. Mantén la sesión iniciada aunque el usuario recargue la página
 //[ a. https://firebase.google.com/docs/auth/web/auth-state-persistence
-//{2. Pasar todos los componentes de clase a componentes funcionales usando hooks.
+//{ 2. Pasar todos los componentes de clase a componentes funcionales usando hooks.
+//! HECHO
 //{ 3. Navegar entre la lista del pokedex y el detalle del Pokémon con React router, puedes tomar de ejemplo el siguiente proyecto. https://codesandbox.io/s/cool-lake-eotre
 
 

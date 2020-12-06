@@ -1,78 +1,76 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import PokemonData from './pokemonData/pokemonData';
 import './pokemonDetail.css';
 
 
-export default class PokemonDetail extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showData: false,
-      pokemonStats: [],
-      pokemonTypes: [],
-    }
-  }
+export default function PokemonDetail(props) {
+  const [showData, setShowData] = useState(false);
+  const [pokemonStats, setPokemonStats] = useState([]);
+  const [pokemonTypes, setPokemonTypes] = useState([]);
 
-  getPokemonStats = (data) => {
+
+  const getPokemonStats = (data) => {
     const stats = [];
     data.stats.map(stat => {
-      stats.push(stat.base_stat)
+      stats.push(stat.base_stat);
       return stats;
     })
     return stats;
   }
 
-  getPokemonTypes = (data) => {
+  const getPokemonTypes = (data) => {
     const types = [];
     data.types.map(type => {
-      types.push(type.type.name)
+      types.push(type.type.name);
       return types;
     })
     return types;
   }
 
-  openPokemonData = () => {
-    this.setState({showData: true})
+  const openPokemonData = () => {
+    setShowData(true);
   }
 
-  componentDidMount = async() => {
+  useEffect(() => {
+    // componentDidMount
     const url = 'https://pokeapi.co/api/v2/pokemon/';
-    const number = this.props.number;
-
+    const number = props.number;
     //Consumir la API de pokeapi
-    const response = await fetch(`${url}${number}`);
-    const data = await response.json();
-    const stats = await this.getPokemonStats(data);
-    await this.setState({pokemonStats: stats});
-    const types = await this.getPokemonTypes(data);    
-    await this.setState({pokemonTypes: types});
-    this.openPokemonData();
-  }
+    const getPokemonDetails = async () => {
+      const response = await fetch(`${url}${number}`);
+      const data = await response.json();
+      const stats = await getPokemonStats(data);
+      await setPokemonStats(stats);
+      const types = await getPokemonTypes(data);    
+      await setPokemonTypes(types);
+      openPokemonData();
+    }
+    getPokemonDetails();
+  }, []);
 
-  render() {
-    return (
-      <div className="pokemon-detail-container">
-        {
-          this.state.showData ? 
-          //* Se muestra una vez que están cargados los detalles del Pokemon
-            <div className="pokemon-detail-container">
-              <div className="pokemon-detail">
-                <div className="pokemon-detail-id">
-                  <h2>{this.props.number}</h2>
-                  <h2>{this.props.name[0].toUpperCase() + this.props.name.slice(1)}</h2>
-                </div>
-                <div className="pokemon-detail-img">
-                  <img src={this.props.img} alt={this.props.name}/>
-                </div>
+  
+  return (
+    <div className="pokemon-detail-container">
+      {
+        showData ? 
+        //* Se muestra una vez que están cargados los detalles del Pokemon
+          <div className="pokemon-detail-container">
+            <div className="pokemon-detail">
+              <div className="pokemon-detail-id">
+                <h2>{props.number}</h2>
+                <h2>{props.name[0].toUpperCase() + props.name.slice(1)}</h2>
               </div>
-              <PokemonData pokemonTypes={this.state.pokemonTypes} pokemonStats={this.state.pokemonStats} closeModalFn={this.props.closeModalFn} colors={this.props.colors} />
+              <div className="pokemon-detail-img">
+                <img src={props.img} alt={props.name}/>
+              </div>
             </div>
+            <PokemonData pokemonTypes={pokemonTypes} pokemonStats={pokemonStats} closeModalFn={props.closeModalFn} colors={props.colors} />
+          </div>
 
-          :
-          //* Se muestra mientras los detalles del pokemon son cargados
-            <div className="pokeball"></div>
-        }
-      </div>
-    );
-  }
+        :
+        //* Se muestra mientras los detalles del pokemon son cargados
+          <div className="pokeball"></div>
+      }
+    </div>
+  );
 }

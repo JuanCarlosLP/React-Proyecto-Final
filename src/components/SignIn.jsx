@@ -81,10 +81,9 @@ export default function SignIn (props) {
               container 
               item 
               xs={12} 
-              sm={6} 
-              aligncontent="center" 
-              direction="column"
-              justify="space-between"
+              sm={6}
+              alignItems="center"
+              justify="center"
               style={{ padding:10 }}>
               <div />
               <div style={{
@@ -97,7 +96,7 @@ export default function SignIn (props) {
                   <Grid container justify="center" >
                       <img src="https://www.freepnglogos.com/uploads/pok-mon-go-logo-png-30.png" alt="Pokemon Logo" width='200'/>
                   </Grid>
-                  {/*Username*/}
+                  {/*Email*/}
                   <TextField
                       onChange={(e) => handleEmailFieldChange(e)}
                       variant="outlined"
