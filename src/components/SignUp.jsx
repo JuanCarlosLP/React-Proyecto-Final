@@ -1,24 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
 import {auth} from '../firebase/config';
 import { Grid } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 
+export default function SignUp () {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleEmailFieldChange = (event) => {
+    setEmail(event.target.value);
+    console.log(email);
+  };
+
+  const handlePasswordFieldChange = (event) => {
+    setPassword(event.target.value);
+    console.log(password);
+  };
+
   const register = (event) => {
     event.preventDefault();
-    auth.createUserWithEmailAndPassword('oislasreyess@gmail.com', 'oscar1234').then(
+    auth.createUserWithEmailAndPassword(email, password).then(
         response => {
             console.log(response);
         }
     ).catch( error => console.log(error));
   }
 
-
-export default function SignUp () {
    return (
 <div>
-  <form onSumbmit={register} >
+  <form onSubmit={register} >
     <Grid container style={{minHeight: '100vh'}}>
         {/*PRIMER CONTENEDOR con Formulario*/}
         <Grid 
@@ -72,6 +84,7 @@ export default function SignUp () {
                 <div style={{ height: 20 }} />
                 <Grid item xs={12}>
                 <TextField
+                    onChange={(e) => handleEmailFieldChange(e)}
                     variant="outlined"
                     required
                     fullWidth
@@ -85,6 +98,7 @@ export default function SignUp () {
                 <div style={{ height: 20 }} />
                 <Grid item xs={12}>
                 <TextField
+                  onChange={(e) => handlePasswordFieldChange(e)}
                     variant="outlined"
                     required
                     fullWidth
