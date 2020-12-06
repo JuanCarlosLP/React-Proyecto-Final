@@ -6,6 +6,12 @@ import pokeColors from './databases/pokeColors';
 
 
 export default class Pokedex extends React.Component {
+
+  // const [pokemones, setPokemones] = useState([]);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [pokemonPerPage, setPokemonPerPage] = useState(12);
+  // const [pokemonLimit, setPokemonLimit] = useState(893);
+
   constructor() {
       super();
       this.state = {

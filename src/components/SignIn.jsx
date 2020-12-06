@@ -13,22 +13,23 @@ export default function SignIn (props) {
   const history = useHistory();
   const googleProvider = new firebase.auth.GoogleAuthProvider();
   const facebookProvider = new firebase.auth.FacebookAuthProvider();
+  // https://www.freeprivacypolicy.com/blog/facebook-app-privacy-policy/
 
   const handleEmailFieldChange = (event) => {
     setEmail(event.target.value);
-    console.log(email);
+    // console.log(email);
   };
 
   const handlePasswordFieldChange = (event) => {
     setPassword(event.target.value);
-    console.log(password);
+    // console.log(password);
   };
 
   const login = async (event) => {
     try {
       event.preventDefault();
       const result = await auth.signInWithEmailAndPassword(email, password)
-      console.log("Autenticado satisfactoriamente", result);
+      // console.log("Autenticado satisfactoriamente", result);
       //Para actualizar el estado y redireccionar al usuario a otra pagina
       await props.setUserFn(result.user);
       history.push("/pokedex");
@@ -41,7 +42,7 @@ export default function SignIn (props) {
   const showGooglePopup = async () => {
     try {
       let result = await firebase.auth().signInWithPopup(googleProvider);
-      console.log("Autenticado satisfactoriamente", result);
+      // console.log("Autenticado satisfactoriamente", result);
       //Para actualizar el estado y redireccionar al usuario a otra pagina
       await props.setUserFn(result.user);
       history.push("/pokedex");
@@ -67,13 +68,13 @@ export default function SignIn (props) {
 
 
    return (
-  <div>
+  <div className="signin">
     <form onSubmit={login} >
-      <Grid container style={{minHeight: '100vh'}}>
+      <Grid container style={{height: '92vh'}}>
           {/*PRIMER CONTENEDOR con Imagen*/}
           <Grid item xs={12} sm={6}>
               <img src="https://i.pinimg.com/originals/7c/19/62/7c1962b7a65ec76085f96e1ccf8bfc7e.jpg" 
-              style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="poke-logo"/>
+              style={{width: '100%', height: '92vh', objectFit: 'cover'}} alt="poke-logo"/>
           </Grid>
           {/*SEGUNDO CONTENEDOR con Formulario*/}
           <Grid 

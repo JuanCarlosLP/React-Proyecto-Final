@@ -1,22 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./header.css";
+import UserData from './UserData';
 
-export default function Header() {
+export default function Header(props) {
+  console.log(props.user);
+
   return (
     <header>
       <nav className="navbar">
         <ul>
           <li>
-            <Link to="/">Inicio</Link>
+            <Link className="link" to="/">Inicio</Link>
           </li>
           <li>
-            <Link to="/registro">Registro</Link>
+            <Link className="link" to="/registro">Registro</Link>
           </li>
           <li>
-            <Link to="/pokedex">Pokedex</Link>
+            <Link className="link" to="/pokedex">Pokedex</Link>
           </li>
         </ul>
+        {
+          props.user &&
+          <UserData user={props.user} setUserFn={props.setUserFn} />
+        }
       </nav>
     </header>
   );
