@@ -11,12 +11,10 @@ export default function SignUp () {
 
   const handleEmailFieldChange = (event) => {
     setEmail(event.target.value);
-    console.log(email);
   };
 
   const handlePasswordFieldChange = (event) => {
     setPassword(event.target.value);
-    console.log(password);
   };
 
   const register = (event) => {
@@ -31,7 +29,7 @@ export default function SignUp () {
    return (
 <div>
   <form onSubmit={register} >
-    <Grid container style={{minHeight: '100vh'}}>
+    <Grid container style={{height: '92vh'}}>
         {/*PRIMER CONTENEDOR con Formulario*/}
         <Grid 
             container 
@@ -54,7 +52,7 @@ export default function SignUp () {
                     <img src="https://www.freepnglogos.com/uploads/pok-mon-go-logo-png-30.png" alt="Pokemon Logo" width='200'/>
                 </Grid>
                 {/*First Name*/}
-                <div style={{ height: 20 }} />
+                {/* {<div style={{ height: 20 }} />
                 <Grid item xs={12}>
                 <TextField
                     autoComplete="fname"
@@ -65,10 +63,10 @@ export default function SignUp () {
                     id="firstName"
                     label="First Name"
                     autoFocus
-                />
-                </Grid>
+                />}
+                </Grid> */}
                 {/*Last Name*/}
-                <div style={{ height: 20 }} />
+                {/* <div style={{ height: 20 }} />
                 <Grid item xs={12}>
                 <TextField
                     variant="outlined"
@@ -79,7 +77,7 @@ export default function SignUp () {
                     name="lastName"
                     autoComplete="lname"
                 />
-                </Grid>
+                </Grid> */}
                 {/*Email*/}
                 <div style={{ height: 20 }} />
                 <Grid item xs={12}>

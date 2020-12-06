@@ -16,15 +16,22 @@
 //[ b. https://firebase.google.com/docs/auth/web/facebook-login
 //! HECHO
 //{ 6. Crea dos funciones, una para manejar el registro y otra para manejar el inicio de sesión con correo electrónico y contraseña.
+//! HECHO
 //{ 7. Crea una función y un estado con useState para poder capturar los datos que van ingresando los usuarios para el componente de inicio de sesión y el componente de registro.
+//! HECHO
 //{ 8. Crea una función para poder autenticar un usuario con correo electrónico y contraseña, para ello deberás pasar los datos que ha capturado el usuario hacía las funciones.
 //[ a. https://firebase.google.com/docs/auth/web/password-auth#sign_in_a_user_with_an_email_address_and_password
+//! HECHO
 //{ 9. Crea una función para poder registrar un usuario con correo electrónico y contraseña, de igual manera deberás pasarle el correo electrónico y la contraseña ingresados en el formulario.
 //[ a. https://firebase.google.com/docs/auth/web/password-auth#create_a_password-based_account
+//! HECHO
 //{ 10. Crea un estado user para guardar la respuesta de firebase con los datos del usuario cuando haya iniciado sesión correctamente
+//! HECHO
 //{ 11. Redirecciona al usuario hacía la ruta de /pokedex después de haber actualizado el estado cuando se haya iniciado sesión correctamente con los 3 métodos de inicio de sesión.
 //[ a. https://reactrouter.com/web/api/Hooks/usehistory – redireccionar con un el hook useHistory
+//! HECHO
 //[ b. https://reactrouter.com/web/example/auth-workflow – redireccionar con el componente Redirect
+//*FALTA https://reactrouter.com/web/example/auth-workflow
 //{ 12. Protege la ruta para que solo usuarios autenticados puedan acceder a la ruta/pokedex, en caso de que no tenga una sesión iniciada deberás mostrar un mensaje de que necesita iniciar sesión o simplemente puede redireccionar al usuario hacía la ruta de inicio de sesión.
 //! HECHO
 //{ 13. Coloca la aplicación que hiciste en la actividad no.4 bajo la ruta de pokedex.
@@ -36,8 +43,11 @@
 //! HECHO
 //[ c. Pokedex
 //! HECHO
-//{ 15. En el menú tendrás que colocar un componente para mostrar los datos del usuario cuando haya iniciado sesión correctamente (nombre e imagen de perfil), en este punto tendrás que usar el renderizado condicional para mostrar el componente únicamente cuando el usuario haya iniciado sesión.16. Habilitar el menú contextual para el componente del punto anterior para mostrar la opción de cerrar sesión y redireccionar al usuario al inicio una vez que haya cerrado sesión.
+//{ 15. En el menú tendrás que colocar un componente para mostrar los datos del usuario cuando haya iniciado sesión correctamente (nombre e imagen de perfil), en este punto tendrás que usar el renderizado condicional para mostrar el componente únicamente cuando el usuario haya iniciado sesión.
+//*FALTA la parte de facebook
+//{ 16. Habilitar el menú contextual para el componente del punto anterior para mostrar la opción de cerrar sesión y redireccionar al usuario al inicio una vez que haya cerrado sesión.
 //[ a. https://firebase.google.com/docs/auth/web/password-auth#next_steps
+ //! HECHO
 
 //* Reto (Opcional):
 //{ 1. Mantén la sesión iniciada aunque el usuario recargue la página

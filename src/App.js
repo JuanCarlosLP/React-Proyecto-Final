@@ -25,7 +25,7 @@ export default function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
+        <Header user={user} setUserFn={setUser} />
         
         <Switch>
           <Route path="/" exact>
