@@ -71,12 +71,6 @@ export default function SignIn (props) {
   <div className="signin">
     <form onSubmit={login} >
       <Grid container style={{height: '92vh'}}>
-          {/*PRIMER CONTENEDOR con Imagen*/}
-          <Grid item xs={12} sm={6}>
-              <img src="https://i.pinimg.com/originals/7c/19/62/7c1962b7a65ec76085f96e1ccf8bfc7e.jpg" 
-              style={{width: '100%', height: '92vh', objectFit: 'cover'}} alt="poke-logo"/>
-          </Grid>
-          {/*SEGUNDO CONTENEDOR con Formulario*/}
           <Grid 
               container 
               item 
@@ -92,10 +86,6 @@ export default function SignIn (props) {
                   maxWidth:300,
                   minWidth:400,
                   }}>
-                  {/*Pokemon Logo*/}
-                  <Grid container justify="center" >
-                      <img src="https://www.freepnglogos.com/uploads/pok-mon-go-logo-png-30.png" alt="Pokemon Logo" width='200'/>
-                  </Grid>
                   {/*Email*/}
                   <TextField
                       onChange={(e) => handleEmailFieldChange(e)}

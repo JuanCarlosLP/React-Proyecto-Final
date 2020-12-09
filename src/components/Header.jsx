@@ -4,7 +4,6 @@ import "./header.css";
 import UserData from './UserData';
 
 export default function Header(props) {
-  console.log(props.user);
 
   return (
     <header>

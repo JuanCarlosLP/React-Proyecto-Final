@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Card from './components/card/card';
 import Pagination from './components/pagination';
-import pokeTypes from './databases/pokeTypes';
-import pokeColors from './databases/pokeColors';
 
 
 // export default class Pokedex extends React.Component {
@@ -80,34 +78,15 @@ export default function Pokedex() {
     <div className="contains-all">
       <div className="above-container">
         <div className="container">
-          <div className="pokedex-header">
-            {
-            /* PENDIENTE
-            <div className="input">
-              <form>
-                <input value={`${this.state.pokemonPerPage}`} type="number" onChange={this.updatePokemonPerPage}></input>
-              </form>
-            </div> */
-            }
-            {/* <img src='./img/pokemon.png'/> */}
-            <div className="pokedex-header-img"></div>
-          </div>
           <div className="pokedex-container">
             {                
               pokemones.map( (pokemon, index) => {      
                 //2. Solucionar el problema de obtener las imagenes de los pokemones con id < 10, > 10, > 100
                 const pokemonNumber = getNumber(index);
                 const pokemonImg = getImage(pokemonNumber); // Se usaba index
-                const pokemonTypes = pokeTypes[pokemonNumber-1];
-                const pokemonColors = pokemonTypes.map(type => {            
-                                        return pokeColors[type]; // No funciona como pokeColors.type
-                                      });
                 
-                let colors = [];
-                pokemonColors.length===1 ? colors = [pokemonColors[0], pokemonColors[0]] : colors = [pokemonColors[0], pokemonColors[1]] ;
-                // let pokemonImg = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/00${index + 1}.png`
                 return (
-                  <Card key={index + 1} number={pokemonNumber} name={pokemon.name} img={pokemonImg} colors={colors} />
+                  <Card key={index + 1} number={pokemonNumber} name={pokemon.name} img={pokemonImg}  />
                 );
               })
             }

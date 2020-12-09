@@ -46,37 +46,6 @@ export default function SignUp () {
                 maxWidth:300,
                 minWidth:400,
                 }}>
-                {/*Pokemon Logo*/}
-                <Grid container justify="center" >
-                    <img src="https://www.freepnglogos.com/uploads/pok-mon-go-logo-png-30.png" alt="Pokemon Logo" width='200'/>
-                </Grid>
-                {/*First Name*/}
-                {/* {<div style={{ height: 20 }} />
-                <Grid item xs={12}>
-                <TextField
-                    autoComplete="fname"
-                    name="firstName"
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="firstName"
-                    label="First Name"
-                    autoFocus
-                />}
-                </Grid> */}
-                {/*Last Name*/}
-                {/* <div style={{ height: 20 }} />
-                <Grid item xs={12}>
-                <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="lastName"
-                    label="Last Name"
-                    name="lastName"
-                    autoComplete="lname"
-                />
-                </Grid> */}
                 {/*Email*/}
                 <div style={{ height: 20 }} />
                 <Grid item xs={12}>
@@ -122,11 +91,6 @@ export default function SignUp () {
                 </Button>
             </div>
             <div />
-        </Grid>
-        {/*SEGUNDO CONTENEDOR con Imagen*/}
-        <Grid item xs={12} sm={6}>
-            <img src="https://cdn.hipwallpaper.com/i/61/67/gtWsNX.jpg" 
-            style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="poke-logo"/>
         </Grid>
     </Grid>
   </form>

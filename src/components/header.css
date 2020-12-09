@@ -6,7 +6,6 @@ header {
 .navbar {
   width: 100%;
   height: 100%;
-  background: #ffcb04;
   display: flex;
 }
 
@@ -19,13 +18,6 @@ header {
   list-style: none;
 }
 
-.link {
-  color: white;
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-decoration: none;
-}
-
 .user-data {
   width: 20%;
   height: 100%;
@@ -34,9 +26,6 @@ header {
   justify-content: space-between;
 }
 
-.user-data h5 {
-  color: #2f6cb3;
-}
 
 .user-image img {
   max-width: 50%;

@@ -4,19 +4,6 @@ import PokemonDetail from './pokemonDetail/pokemonDetail';
 import './card.css';
 
 
-/* const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    background            : `linear-gradient(to right, ${props.colors[0]}, ${props.colors[1]}`
-  }
-}; */
-
-
 export default function Card(props) {
   const [showModal, setShowModal] = useState(false);
 
@@ -44,14 +31,13 @@ export default function Card(props) {
       transform             : 'translate(-50%, -50%)',
       width                 : '50vw',
       height                : '70vh',
-      background            : `linear-gradient(to right, ${props.colors[0]}, ${props.colors[1]}`,
       padding               : '20px',
       overflow              : 'hidden',
     }
   };
 
   return (
-    <div className='card-container' style={{background: `linear-gradient(to right, ${props.colors[0]}, ${props.colors[1]}`}}>
+    <div className='card-container'>
       <div className="pokemon-id">
         <h3>{props.number}</h3>
         <h2>{props.name[0].toUpperCase() + props.name.slice(1)}</h2>
@@ -70,7 +56,7 @@ export default function Card(props) {
         /* <Modal  className="modal" isOpen={state.showModal} style={customStyles}> */
       }
       <Modal isOpen={showModal} style={customStyles}>
-        <PokemonDetail number={props.number} name={props.name} img={props.img} closeModalFn={closeModal} colors={props.colors} />
+        <PokemonDetail number={props.number} name={props.name} img={props.img} closeModalFn={closeModal}/>
       </Modal>
     </div>
   )

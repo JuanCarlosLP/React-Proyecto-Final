@@ -10,9 +10,6 @@ export default function ProtectedRoute(props) {
       (props.children) :
       (
         <SignIn setUserFn={props.setUserFn} />
-        /* <>
-          <h2>No tienes acceso a esta ruta</h2>
-        </> */
       )}
     </Route>
   );

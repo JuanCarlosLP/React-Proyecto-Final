@@ -5,16 +5,7 @@ import './pokemonData.css';
 
 function PokemonData(props) {
  return (
-  <div className="pokemon-data-container">
-    <div className="pokemon-types">
-      {
-        props.pokemonTypes.map((pokemonType, index) => {
-          return (
-            <h3 key={index} style={{background: `${props.colors[index]}`}}>{pokemonType}</h3>
-          )
-        })
-      }
-    </div>        
+  <div className="pokemon-data-container">       
     <div className="pokemon-stats">
       <div className="col1">
         <div>

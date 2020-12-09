@@ -45,32 +45,3 @@ export default function App() {
     </div>
   )
 }
-
-
-    //! Firebase
-    // let provider =  new firebase.auth.GoogleAuthProvider();
-
-    //! Firebase
-    // let facebookProvider = new firebase.auth.FacebookAuthProvider();
-
-    //! Firebase
-    // const signInGoogle = () => {
-    //   auth.signInWithPopup(provider).then(result =>{
-    //     let token = result.credential.accesToken;
-    //     let user = result.user;
-    //     console.log(user);
-    //   }).catch(error => {
-    //     console.log(error);
-    //   })
-    // }
-
-    //!Firebase
-    // const signInFacebook = () => {
-    //   auth.signInWithPopup(facebookProvider).then(result =>{
-    //     let token = result.credential.accesToken;
-    //     let user = result.user;
-    //     console.log(user);
-    //   }).catch(error => {
-    //     console.log(error);
-    //   })
-    // }

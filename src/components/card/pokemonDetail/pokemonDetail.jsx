@@ -6,7 +6,6 @@ import './pokemonDetail.css';
 export default function PokemonDetail(props) {
   const [showData, setShowData] = useState(false);
   const [pokemonStats, setPokemonStats] = useState([]);
-  const [pokemonTypes, setPokemonTypes] = useState([]);
 
 
   const getPokemonStats = (data) => {
@@ -18,14 +17,7 @@ export default function PokemonDetail(props) {
     return stats;
   }
 
-  const getPokemonTypes = (data) => {
-    const types = [];
-    data.types.map(type => {
-      types.push(type.type.name);
-      return types;
-    })
-    return types;
-  }
+
 
   const openPokemonData = () => {
     setShowData(true);
@@ -41,8 +33,6 @@ export default function PokemonDetail(props) {
       const data = await response.json();
       const stats = await getPokemonStats(data);
       await setPokemonStats(stats);
-      const types = await getPokemonTypes(data);    
-      await setPokemonTypes(types);
       openPokemonData();
     }
     getPokemonDetails();
@@ -64,7 +54,7 @@ export default function PokemonDetail(props) {
                 <img src={props.img} alt={props.name}/>
               </div>
             </div>
-            <PokemonData pokemonTypes={pokemonTypes} pokemonStats={pokemonStats} closeModalFn={props.closeModalFn} colors={props.colors} />
+            <PokemonData pokemonStats={pokemonStats} closeModalFn={props.closeModalFn} colors={props.colors} />
           </div>
 
         :
