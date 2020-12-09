@@ -43,18 +43,10 @@ export default function Card(props) {
         <h2>{props.name[0].toUpperCase() + props.name.slice(1)}</h2>
       </div>
       <img src={props.img} alt={props.name}/>
-      <button  className="bounce" onClick={() => openModal()}>
-        <span className="D">D</span> 
-        <span className="e">e</span> 
-        <span className="t">t</span> 
-        <span className="a">a</span> 
-        <span className="i">i</span> 
-        <span className="l">l</span> 
-        <span className="s">s</span>
+      <button onClick={() => openModal()}>
+        Details
       </button>
-      {
-        /* <Modal  className="modal" isOpen={state.showModal} style={customStyles}> */
-      }
+
       <Modal isOpen={showModal} style={customStyles}>
         <PokemonDetail number={props.number} name={props.name} img={props.img} closeModalFn={closeModal}/>
       </Modal>
