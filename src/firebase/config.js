@@ -1,13 +1,13 @@
 import firebase from 'firebase';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDEMfSyhv9Rod8YNqKsNeCiAZ5JgaHHTVs",
-  authDomain: "pokedex-login-b819b.firebaseapp.com",
-  databaseURL: "https://pokedex-login-b819b.firebaseio.com",
-  projectId: "pokedex-login-b819b",
-  storageBucket: "pokedex-login-b819b.appspot.com",
-  messagingSenderId: "403775722934",
-  appId: "1:403775722934:web:e8d84f0d1b6fa74fbcdd17"
+  apiKey: "AIzaSyCn2zuGkLAhCD0iuz7jLcngPByOC5_6RPg",
+    authDomain: "pokedex-76cde.firebaseapp.com",
+    databaseURL: "https://pokedex-76cde.firebaseio.com",
+    projectId: "pokedex-76cde",
+    storageBucket: "pokedex-76cde.appspot.com",
+    messagingSenderId: "788214290846",
+    appId: "1:788214290846:web:0df56d45426831e8ea9e8f"
 };
 
 firebase.initializeApp(firebaseConfig);
