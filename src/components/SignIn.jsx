@@ -13,28 +13,22 @@ export default function SignIn (props) {
   const history = useHistory();
   const googleProvider = new firebase.auth.GoogleAuthProvider();
   const facebookProvider = new firebase.auth.FacebookAuthProvider();
-  // https://www.freeprivacypolicy.com/blog/facebook-app-privacy-policy/
 
   const handleEmailFieldChange = (event) => {
     setEmail(event.target.value);
-    // console.log(email);
   };
 
   const handlePasswordFieldChange = (event) => {
     setPassword(event.target.value);
-    // console.log(password);
   };
 
   const login = async (event) => {
     try {
       event.preventDefault();
       const result = await auth.signInWithEmailAndPassword(email, password)
-      // console.log("Autenticado satisfactoriamente", result);
-      //Para actualizar el estado y redireccionar al usuario a otra pagina
       await props.setUserFn(result.user);
       history.push("/pokedex");
     } catch (error) {
-      //En caso de que las credenciales de acceso sean incorrectas
       console.log("Error en la autenticacion", error);
     }
   };
@@ -42,12 +36,9 @@ export default function SignIn (props) {
   const showGooglePopup = async () => {
     try {
       let result = await firebase.auth().signInWithPopup(googleProvider);
-      // console.log("Autenticado satisfactoriamente", result);
-      //Para actualizar el estado y redireccionar al usuario a otra pagina
       await props.setUserFn(result.user);
       history.push("/pokedex");
     } catch (error) {
-      //En caso de que las credenciales de acceso sean incorrectas
       console.log("Error en la autenticacion", error);
     }
   };
@@ -56,16 +47,12 @@ export default function SignIn (props) {
     try {
       let result = await firebase.auth().signInWithPopup(facebookProvider);
       console.log("Autenticado satisfactoriamente", result);
-      //Para actualizar el estado y redireccionar al usuario a otra pagina
       props.setUserFn(result.user);
       history.push("/pokedex");
     } catch (error) {
       console.log("Error en la autenticacion", error);
-      //En caso de que las credenciales de acceso sean incorrectas
     }
   };
-
-
 
    return (
   <div className="signin">
