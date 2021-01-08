@@ -10,7 +10,7 @@ export default function UserData(props) {
       const result = await firebase.auth().signOut();
         await props.setUserFn(false);
         console.log('Signout exitoso', result);
-        history.push("/pokedex");
+        history.push("/chatreact");
     } catch(error) {
         console.log('Signout rechazado');
     }

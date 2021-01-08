@@ -10,7 +10,7 @@ import './App.css';
 import Header from './components/Header';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import Pokedex from './Pokedex';
+import ChatReact from './ChatReact';
 //* PrivateRoute
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -34,8 +34,8 @@ export default function App() {
           <Route path="/registro">
             <SignUp />
           </Route>
-          <ProtectedRoute path="/pokedex" user={user} setUserFn={setUser}>
-            <Pokedex />
+          <ProtectedRoute path="/chatreact" user={user} setUserFn={setUser}>
+            <ChatReact />
           </ProtectedRoute>
           <Route path="*" exact>
             <h2>404 Not Found</h2>

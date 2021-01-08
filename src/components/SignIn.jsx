@@ -12,7 +12,6 @@ export default function SignIn (props) {
   const [password, setPassword] = useState('');
   const history = useHistory();
   const googleProvider = new firebase.auth.GoogleAuthProvider();
-  const facebookProvider = new firebase.auth.FacebookAuthProvider();
 
   const handleEmailFieldChange = (event) => {
     setEmail(event.target.value);
@@ -27,7 +26,7 @@ export default function SignIn (props) {
       event.preventDefault();
       const result = await auth.signInWithEmailAndPassword(email, password)
       await props.setUserFn(result.user);
-      history.push("/pokedex");
+      history.push("/chatreact");
     } catch (error) {
       console.log("Error en la autenticacion", error);
     }
@@ -37,18 +36,7 @@ export default function SignIn (props) {
     try {
       let result = await firebase.auth().signInWithPopup(googleProvider);
       await props.setUserFn(result.user);
-      history.push("/pokedex");
-    } catch (error) {
-      console.log("Error en la autenticacion", error);
-    }
-  };
-
-  const showFacebookPopup = async () => {
-    try {
-      let result = await firebase.auth().signInWithPopup(facebookProvider);
-      console.log("Autenticado satisfactoriamente", result);
-      props.setUserFn(result.user);
-      history.push("/pokedex");
+      history.push("/chatreact");
     } catch (error) {
       console.log("Error en la autenticacion", error);
     }
@@ -128,23 +116,7 @@ export default function SignIn (props) {
                   >
                   Sign In Google
                   </Button>
-                  <div style={{ height: 20 }} />
-                  {/*Button Sign In Facebook*/}
-                  <Button
-                      onClick={showFacebookPopup}
-                      type="submit"
-                      fullWidth
-                      variant="contained"
-                      color="primary"
-                      aligncontent="center" 
-                      direction="column"
-                      justify="space-between"
-                      style={{ padding:10, top:10}}
-                  >
-                  Sign In Facebook
-                  </Button>
               </div>
-              <div />
           </Grid>
       </Grid>
     </form>

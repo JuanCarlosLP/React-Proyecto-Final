@@ -16,7 +16,7 @@ export default function Header(props) {
             <Link className="link" to="/registro">Registro</Link>
           </li>
           <li>
-            <Link className="link" to="/pokedex">Pokedex</Link>
+            <Link className="link" to="/chatreact">Chat</Link>
           </li>
         </ul>
         {
